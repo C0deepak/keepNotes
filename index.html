@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark">
+    <nav>
+        <div class="logo" id="logo"><i class="fa-regular fa-lightbulb"></i>Keep</div>
+        <div class="theme">
+            <i class="fa-regular fa-sun" id="light" onclick="light()"></i>
+            <i class="fa-regular fa-moon" id="dark" onclick="dark()"></i>
+        </div>
+    </nav>
+
+    <!-- <div class="add" onmouseleave="notShow()"> -->
+        <form action="#" class="add" onmouseleave="notShow()">
+            <div onmousedown="show()" id="note-title">
+                <input type="text" id="title" placeholder="Title">
+            </div>
+            <div id="note-body">
+                <textarea id="note" cols="10" rows="10" placeholder="Take a note..."></textarea>
+            </div>
+            <div class="colors">
+                <div id="col1" onclick="colocheck('mediumseagreen')"></div>
+                <div id="col2" onclick="colocheck('tomato')"></div>
+                <div id="col3" onclick="colocheck('cornflowerblue')"></div>
+                <div id="col4" onclick="colocheck('darkgrey')"></div>
+                <div id="col5" onclick="colocheck('goldenrod')"></div>
+            </div>
+            <button type="submit" id="sub"><i class="fa-solid fa-plus"></i></button>
+        </form>
+    <!-- </div> -->
+
+    <div class="popup">
+        
+    </div>
+
+    <div class="all-notes">
+        
+    </div>
+
+    <div class="modal">
+        <div class = "m-box">
+            <input type="text" id="m-title"></input>
+            <textarea id="m-note" cols="10" rows="10"></textarea>
+            <hr>
+            <button class="cancel" onclick="notShowModal()">Cancel</button>
+            <button class = "update" onclick="updated()">Update</button>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

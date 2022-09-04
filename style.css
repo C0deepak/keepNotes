@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    --border-rad: 10px;
+}
+body.dark{
+    --primary: gold;
+    --primary-bg: #303030;
+    --secondary-bg: rgb(94, 94, 94);
+    --border: 1px solid rgb(94, 94, 94);
+    --primary-text: #fff;
+    background: var(--primary-bg);
+    color: var(--primary-text);
+}
+body.light{
+    --primary: gold;
+    --primary-bg: #f5f5f5;
+    --secondary-bg: #aaa;
+    --border: 1px solid #aaa;
+    --primary-text: #222;
+    background: var(--primary-bg);
+    color: var(--primary-text);
+}
+nav{
+    padding: 0px 15px;
+    background: var(--primary-bg);
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: var(--border);
+    height: 60px;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    overflow: hidden;
+    z-index: 999;
+}
+nav .logo{
+    font-size: 1.2rem;
+}
+nav .logo i{
+    margin-right: 10px;
+    font-size: 1.5rem;
+    color: var(--primary);
+}
+.theme{
+    position: relative;
+}
+.theme i{
+    position: absolute;
+    top: -10px;
+    right: 0px;
+    font-size: 1.2rem;
+}
+#dark{
+    transform: translateX(250%);
+}
+.add{
+    width: 600px;
+    margin: 70px auto;
+    padding: 6px;
+    border: var(--border);
+    border-radius: var(--border-rad);
+    position: relative;
+}
+.add input{
+    width: 100%;
+    padding: 6px;
+    font-weight: bold;
+    margin-bottom: 6px;
+    border: none;outline: none;
+    background: none;
+    color: var(--primary-text);
+    font-size: 1.1rem;
+}
+.add textarea{
+    width: 100%;
+    padding: 6px;
+    height: 70px;
+    background: none;
+    border: none;outline: none;
+    color: var(--primary-text);
+    font-weight: bold;
+}
+#note-body{
+    display: none;
+}
+.add button{
+    position: absolute;
+    background: var(--secondary-bg);
+    height: 40px; width: 40px;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-align: center;
+    line-height: 40px;
+    bottom: -15px;
+    right: -20px;
+    color: var(--primary-text);
+    outline: none; border: none;
+    cursor: pointer;
+}
+.all-notes{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.all-notes .prev-note{
+    width: 250px;
+    height: inherit;
+    margin: 10px;
+    padding: 10px;
+    text-align: left;
+    border: var(--border);
+    border-radius: var(--border-rad);
+    min-height: 100px;
+    max-height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+.all-notes .prev-note-title{
+    font-weight: bold;
+}
+.all-notes .extra{
+    position: absolute;
+    bottom: 0px;
+    right: 10px;
+    display: none;
+}
+.all-notes .extra i{
+    display: block;
+    background-color: #222;
+    color: var(--primary);
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    line-height: 35px;
+    text-align: center;
+    font-size: 1.05rem;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.all-notes .extra i:hover{
+    color: #f5f5f5;
+}
+.prev-note:hover .extra{
+    display: block;
+}
+.popup{
+    position: fixed;
+    bottom: 10px;
+    left: 40%;
+    padding: 0px 10px;
+    /* width: 250px; */
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    border-radius: var(--border-rad);
+    border: var(--border);
+    background: var(--primary-text);
+    color: var(--primary-bg);
+    z-index: 1000;
+    display: none;
+}
+.modal{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1002;
+    background: rgba(0, 0, 0, 0.1);
+    background-size: cover;
+}
+.m-box{
+    width: 500px;
+    margin: 80px auto;
+    background: var(--primary-text);
+    color: var(--primary-bg);
+    padding: 10px
+}
+.modal, .m-box{
+    opacity: 0;
+    pointer-events: none;
+}
+.modal.smodal, .m-box.smodal{
+    opacity: 1;
+    pointer-events: auto;
+}
+.m-box input, .m-box textarea{
+    padding: 6px;
+    margin-bottom: 6px;
+    display: block;
+    width: 100%;
+}
+.m-box textarea{
+    text-align: start;
+    height: 150px;
+}
+.m-box button{
+    padding: 6px;
+    color: #222;
+    margin: 4px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.m-box button.cancel{
+    background: rgb(247, 80, 50);
+}
+.m-box button.update{
+    background: dodgerblue;
+}
+.colors{
+    display: flex;
+}
+.colors div{
+    height: 20px; width: 20px;
+    margin: 4px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+#col1{
+    background: mediumseagreen;
+}
+#col2{
+    background: tomato;
+}
+#col3{
+    background: cornflowerblue;
+}
+#col4{
+    background: darkgrey;
+}
+#col5{
+    background: goldenrod;
+}
+@media (max-width:650px) {
+    .m-box{
+        width: 80%;
+    }
+    .add{
+        width: 80%;
+    }
+    .popup{
+        left: 20%;
+    }
+}
